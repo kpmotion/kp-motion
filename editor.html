@@ -1,0 +1,13 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KP Motion — Visual Editor v19</title><link rel="stylesheet" href="editor.css?v=19-topbottom-no-rise-20261112"><script src="content.js?v=descriptions-21" defer></script><script src="editor.js?v=descriptions-21" defer></script></head>
+<body><header class="topbar"><div class="wordmark"><span class="mark">KP</span><div><strong>PORTFOLIO EDITOR</strong><small>v19 · 3 раздела · файловая синхронизация</small></div></div>
+<div class="topactions"><button id="choose-folder-top" class="small secondary">Папка сайта</button><button id="sync-top" class="small primary">ОБНОВИТЬ КОНТЕНТ</button><button id="restore" class="small secondary">Сбросить</button><button id="save-folder" class="small secondary">Сохранить</button><button id="download" class="small secondary">Скачать content.js</button></div></header>
+<div class="workspace"><aside class="sidebar"><nav class="tabs" aria-label="Настройки">
+<button class="tab active" data-tab="sync">Контент</button><button class="tab" data-tab="hero">Главная</button><button class="tab" data-tab="categories">Разделы</button><button class="tab" data-tab="works">Работы</button><button class="tab" data-tab="featured">Featured</button><button class="tab" data-tab="socials">Соцсети</button><button class="tab" data-tab="contact">Контакты</button><button class="tab" data-tab="site">Сайт</button><button class="tab" data-tab="browser">Браузер</button></nav>
+<div class="editor-panel" id="panel"></div><div class="side-foot"><p id="status" role="status">Сначала выбери папку сайта, затем нажми «ОБНОВИТЬ КОНТЕНТ».</p><p>Видео и WebP не загружаются в редактор: они лежат в папках assets.</p></div></aside>
+<section class="preview-area"><div class="preview-top"><div class="preview-title"><b>Предпросмотр</b><span id="preview-caption">Главная · Desktop</span></div>
+<div class="seg" role="group" aria-label="Страница"><button data-page="home" class="selected">Главная</button><button data-page="category">Раздел</button></div><select id="preview-category" aria-label="Категория" hidden></select>
+<div class="seg" role="group" aria-label="Экран"><button data-viewport="desktop" class="selected">Desktop</button><button data-viewport="mobile">Mobile</button></div>
+<button id="reload-preview" class="small secondary">Обновить</button></div>
+<div class="preview-shell"><iframe id="preview" title="Предпросмотр портфолио" src="index.html?preview=19"></iframe></div>
+<div class="preview-foot"><span>Работы и Featured: ↑ ↓ на одну позицию, TOP / BOTTOM в начало или конец.</span><span>После синхронизации сохраняется <code>content.js</code>.</span></div></section></div></body></html>

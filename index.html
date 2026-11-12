@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050607">
+  <meta name="description" content="Motion design portfolio">
+  <title>KP — Motion Designer / Video Editor</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="style.css?v=descriptions-21">
+  <script src="content.js?v=19" defer></script>
+  <script src="script.js?v=descriptions-21" defer></script>
+</head>
+<body data-page="home">
+  
+  <header class="site-header" id="site-header">
+    <div class="site-header-inner">
+      <a class="brand-link" href="index.html" aria-label="KP Motion — Home">
+        <img class="brand-mark" src="assets/images/brand-mark.webp" alt="" width="52" height="52">
+        <span id="header-brand">KP MOTION</span>
+      </a>
+      <nav class="header-socials" id="header-social-links" aria-label="External links"></nav>
+    </div>
+  </header>
+<main class="page" id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow" id="hero-eyebrow" data-type-slot="heroEyebrow"></p>
+        <h1 id="hero-title" data-type-slot="heroTitle"></h1>
+        <p class="hero-summary" id="hero-summary" data-type-slot="heroSummary"></p>
+      </div>
+      <div id="showreel-slot"></div>
+    </section>
+    <section class="services" aria-label="Explore services" id="services"></section>
+    <section class="featured" id="featured" aria-labelledby="featured-title">
+      <div class="section-heading">
+        <h2 id="featured-title" data-type-slot="featuredTitle"></h2>
+      </div>
+      <div id="work-list" class="masonry featured-masonry"></div>
+      <p class="empty-projects" id="empty-projects" hidden></p>
+    </section>
+    <footer class="contact" id="contact">
+      <div class="contact-title"><p class="eyebrow" id="contact-eyebrow" data-type-slot="contactEyebrow"></p><h2 id="contact-heading" data-type-slot="contactTitle"></h2></div>
+      <div class="contact-details"><p id="contact-description" data-type-slot="contactDescription"></p><div class="contact-actions"><a id="contact-link" href="#" class="contact-button" target="_blank" rel="noopener noreferrer"><span id="contact-button-label" data-type-slot="contactButton"></span><span class="contact-button-icon"><img src="assets/icons/arrow.svg" alt="" aria-hidden="true" class="ui-icon"></span></a><a id="contact-link-2" href="#" class="contact-button-secondary" target="_blank" rel="noopener noreferrer" hidden></a></div></div>
+      <div class="contact-art" aria-hidden="true"></div>
+    </footer>
+    <p class="smallprint" id="smallprint" data-type-slot="footer"></p>
+  </main>
+  <div class="modal" id="video-modal" role="dialog" aria-modal="true" aria-label="Video" hidden>
+    <div class="modal-backdrop" data-close="true"></div>
+    <div class="modal-panel">
+      <video id="modal-player" loop playsinline preload="none" disablepictureinpicture disableremoteplayback tabindex="-1"></video>
+      <div class="modal-details" id="modal-details" aria-live="off">
+        <div class="modal-work-title" id="modal-title"></div>
+        <p class="modal-work-description" id="modal-description"></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
