@@ -122,3 +122,36 @@ body > .modal {z-index:1000;}
 .project-title{font-size:13px;font-weight:600;line-height:1.3;letter-spacing:.005em;color:#d8dadd}
 .project-description{margin:4px 0 0;color:#899295;font-size:11px;font-weight:400;line-height:1.45;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 @media(max-width:700px){.project-meta{padding-top:9px}.project-title{font-size:13px}.project-description{font-size:11px}}
+
+/* Uniform Showreel-inspired hover for all navigation and external links. */
+.site-header a,.page a{
+  transition:border-color .65s ease,box-shadow .65s ease,color .65s ease,background-color .65s ease;
+}
+.site-header a:hover,.site-header a:focus-visible,
+.page a:hover,.page a:focus-visible,
+.gallery-card:hover,.gallery-card:focus-visible{
+  border-color:var(--accent);
+  box-shadow:0 0 0 1px #C8FF3D33,0 8px 28px #0005;
+}
+.site-header .brand-link{border-radius:8px}
+.site-header .brand-link:hover,.site-header .brand-link:focus-visible{color:var(--accent)}
+.site-header .brand-mark,.site-header .social-icon,
+.service-card .service-cube,.service-card .service-arrow,.contact-button-icon{
+  transition:transform .7s cubic-bezier(.22,1,.36,1),filter .7s ease;
+}
+.site-header .brand-link:hover .brand-mark,.site-header .brand-link:focus-visible .brand-mark,
+.site-header .social:hover .social-icon,.site-header .social:focus-visible .social-icon,
+.service-card:hover .service-cube,.service-card:focus-visible .service-cube,
+.contact-button:hover .contact-button-icon,.contact-button:focus-visible .contact-button-icon{
+  transform:scale(1.12);
+}
+.service-card:hover .service-arrow,.service-card:focus-visible .service-arrow{transform:translate(3px,-3px)}
+/* Keep the original right-aligned category branding after removing Home links. */
+.category-top,.category-footer{justify-content:flex-end}
+@media(prefers-reduced-motion:reduce){
+  .site-header a,.page a,.site-header .brand-mark,.site-header .social-icon,
+  .service-card .service-cube,.service-card .service-arrow,.contact-button-icon{transition:none}
+}
+.play-icon {
+  display: none !important;
+}

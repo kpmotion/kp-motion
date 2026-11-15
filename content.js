@@ -21,10 +21,10 @@ window.KP_CONTENT = {
       "THAT",
       "MATTERS."
     ],
-    "description": "I create video ads, logo animations, intros, SaaS promos, and product videos. I mix 2D and cutout animation, motion graphics, kinetic typography, and sound design to give each project its own look and feel.",
+    "description": "Video ads, SaaS promos, product videos, logo animations, and intros — crafted with distinctive 2D animation, kinetic typography, and custom sound design.",
     "showreelTitle": "Showreel",
     "showreelDescription": "",
-    "showreelLabel": "",
+    "showreelLabel": "Showreel",
     "showreelFile": "SHOWREEL.mp4",
     "showreelPoster": "SHOWREEL.webp"
   },
