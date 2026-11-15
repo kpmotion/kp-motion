@@ -155,3 +155,12 @@ body > .modal {z-index:1000;}
 .play-icon {
   display: none !important;
 }
+.category-top,
+.category-head > .eyebrow,
+.category-head .category-sub {
+    display: none;
+}
+
+.category-head h1 {
+    margin-top: 0;
+}
