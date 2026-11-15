@@ -54,11 +54,22 @@
     img.addEventListener('error',()=>{if(img.src!==fallback)img.src=fallback},{once:true});
     container.append(img);return img;
   };
-  // Video has no player controls. Text information lives below the video frame.
+  // The only player controls are a small Close button and a passive progress line.
   // Native pixel dimensions are used unless the video exceeds the viewport.
   const videoModal=$('#video-modal'),player=$('#modal-player');
+  const modalProgress=$('#modal-progress'),modalProgressFill=$('#modal-progress-fill');
   const modalDetails=$('#modal-details'), modalTitle=$('#modal-title'), modalDescription=$('#modal-description');
   let focusReturn=null;
+  function updateProgress(){
+    if(!player||!modalProgressFill||!modalProgress)return;
+    const duration=player.duration;
+    const fraction=Number.isFinite(duration)&&duration>0
+      ?Math.min(1,Math.max(0,player.currentTime/duration)):0;
+    modalProgressFill.style.transform='scaleX('+fraction+')';
+    modalProgress.setAttribute('aria-valuenow',String(Math.round(fraction*100)));
+  }
+  ['timeupdate','durationchange','seeked','emptied','ended'].forEach(event=>
+    player?.addEventListener(event,updateProgress));
   function fitVideo(){
     if(!player||!videoModal||videoModal.hidden)return;
     const width=player.videoWidth,height=player.videoHeight;
@@ -70,6 +81,7 @@
     const fittedWidth=Math.floor(width*scale);
     player.style.width=fittedWidth+'px';
     player.style.height=Math.floor(height*scale)+'px';
+    if(modalProgress)modalProgress.style.width=fittedWidth+'px';
     if(modalDetails)modalDetails.style.width=fittedWidth+'px';
   }
   player?.addEventListener('loadedmetadata',fitVideo);
@@ -79,10 +91,12 @@
     focusReturn=control;
     player.pause();player.removeAttribute('src');player.load();
     player.style.width='';player.style.height='';
+    if(modalProgress)modalProgress.style.width='';
     if(modalDetails)modalDetails.style.width='';
     if(modalTitle)modalTitle.textContent=item.title||'';
     if(modalDescription)modalDescription.textContent=item.description||'';
     player.src=item.video;
+    updateProgress();
     videoModal.hidden=false;
     document.body.classList.add('modal-open');
     player.focus({preventScroll:true});
@@ -93,12 +107,14 @@
     if(!videoModal||videoModal.hidden)return;
     player.pause();player.removeAttribute('src');player.load();
     player.style.width='';player.style.height='';
+    if(modalProgress)modalProgress.style.width='';
     if(modalDetails)modalDetails.style.width='';
+    updateProgress();
     videoModal.hidden=true;
     document.body.classList.remove('modal-open');
     focusReturn?.focus({preventScroll:true});
   }
-  // No on-screen buttons: Escape or clicking outside the video closes the overlay.
+  // The Close button, Escape or clicking outside the video closes the overlay.
   videoModal?.addEventListener('click',event=>{
     if(event.target===videoModal||event.target?.dataset.close==='true')closeVideo();
   });

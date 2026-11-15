@@ -25,8 +25,8 @@ window.KP_CONTENT = {
     "showreelTitle": "Showreel",
     "showreelDescription": "",
     "showreelLabel": "",
-    "showreelFile": "SHOWREELweb.mp4",
-    "showreelPoster": "SHOWREELweb.webp"
+    "showreelFile": "SHOWREEL.mp4",
+    "showreelPoster": "SHOWREEL.webp"
   },
   "socials": [
     {
